@@ -2,27 +2,15 @@
 export type Language = "fr" | "en";
 export type Category = "Spatial" | "Critical" | "Digital" | "Graphic" | "Product";
 
+const asset = (file: string) => `${import.meta.env.BASE_URL}assets/${file}`;
+
 export const projectImages = {
-  cover: "/manus-storage/min-gao-page-01_8b01016f.jpg",
-  olympic: "/manus-storage/min-gao-page-05_28ff16b6.jpg",
-  silo: "/manus-storage/min-gao-page-08_38ec4785.jpg",
-  robinson: "/manus-storage/min-gao-page-11_402e4231.jpg",
-  maison: "/manus-storage/min-gao-page-14_07a8cd14.jpg",
-  paris: "/manus-storage/min-gao-page-16_0d06f7d2.jpg",
-  commemoration: "/manus-storage/min-gao-page-17_b1daf8fc.jpg",
-  frac: "/manus-storage/min-gao-page-20_a477f005.jpg",
-  vm: "/manus-storage/min-gao-page-22_4b84e074.jpg",
-  chengyi: "/manus-storage/min-gao-page-24_dd2d944a.jpg",
-  growcable: "/manus-storage/min-gao-page-25_d0463276.jpg",
-  modular: "/manus-storage/min-gao-page-26_aa314980.jpg",
-  jiangnan: "/manus-storage/min-gao-page-27_565b729b.jpg",
+  cover: asset("pages/min-gao-page-01.jpg"), olympic: asset("pages/min-gao-page-05.jpg"), silo: asset("pages/min-gao-page-08.jpg"), robinson: asset("pages/min-gao-page-11.jpg"), maison: asset("pages/min-gao-page-14.jpg"), paris: asset("pages/min-gao-page-16.jpg"), commemoration: asset("pages/min-gao-page-17.jpg"), frac: asset("pages/min-gao-page-20.jpg"), vm: asset("pages/min-gao-page-22.jpg"), chengyi: asset("pages/min-gao-page-24.jpg"), growcable: asset("pages/min-gao-page-25.jpg"), modular: asset("pages/min-gao-page-26.jpg"), jiangnan: asset("pages/min-gao-page-27.jpg"),
 };
 
-export const originalPages = [
-  "/manus-storage/min-gao-page-01_8b01016f.jpg", "/manus-storage/min-gao-page-02_2a1e2eac.jpg", "/manus-storage/min-gao-page-03_d8809ed7.jpg", "/manus-storage/min-gao-page-04_921c83c2.jpg", "/manus-storage/min-gao-page-05_28ff16b6.jpg", "/manus-storage/min-gao-page-06_b6428aef.jpg", "/manus-storage/min-gao-page-07_1569dd4a.jpg", "/manus-storage/min-gao-page-08_38ec4785.jpg", "/manus-storage/min-gao-page-09_ce8f7f72.jpg", "/manus-storage/min-gao-page-10_cef2f9b6.jpg", "/manus-storage/min-gao-page-11_402e4231.jpg", "/manus-storage/min-gao-page-12_4d4689f5.jpg", "/manus-storage/min-gao-page-13_32d394b6.jpg", "/manus-storage/min-gao-page-14_07a8cd14.jpg", "/manus-storage/min-gao-page-15_4b3e478d.jpg", "/manus-storage/min-gao-page-16_0d06f7d2.jpg", "/manus-storage/min-gao-page-17_b1daf8fc.jpg", "/manus-storage/min-gao-page-18_bd3e17ee.jpg", "/manus-storage/min-gao-page-19_5b9d4025.jpg", "/manus-storage/min-gao-page-20_a477f005.jpg", "/manus-storage/min-gao-page-21_e02e7e76.jpg", "/manus-storage/min-gao-page-22_4b84e074.jpg", "/manus-storage/min-gao-page-23_abf564df.jpg", "/manus-storage/min-gao-page-24_dd2d944a.jpg", "/manus-storage/min-gao-page-25_d0463276.jpg", "/manus-storage/min-gao-page-26_aa314980.jpg", "/manus-storage/min-gao-page-27_565b729b.jpg",
-];
+export const originalPages = Array.from({ length: 27 }, (_, index) => asset(`pages/min-gao-page-${String(index + 1).padStart(2, "0")}.jpg`));
 
-export const portfolioPdf = "/manus-storage/min-gao-portfolio-french_dc5bb400.pdf";
+export const portfolioPdf = asset("documents/min-gao-portfolio-french.pdf");
 
 export type Project = {
   slug: string; id: string; category: Category; image: string; pages: number[]; featured?: boolean;

@@ -1,6 +1,6 @@
 /* 用户墙面光影首页：该图片是唯一主视觉，文字置于左侧阴影留白；不使用任何封面物件、额外地面或人工光束。 */
 .wall-hero { position:relative; min-height:calc(100svh - 70px); overflow:hidden; isolation:isolate; background:#c9c0b4; }
-.wall-hero-image { position:absolute; z-index:-3; inset:0; background:url("/manus-storage/min-gao-wall-light-hero_74dbd5e0.png") 50% 88% / cover no-repeat; }
+.wall-hero-image { position:absolute; z-index:-3; inset:0; background-position:50% 88%; background-size:cover; background-repeat:no-repeat; }
 .wall-hero-shade { position:absolute; z-index:-2; inset:0; background:linear-gradient(90deg,rgba(238,232,222,.18) 0%,rgba(238,232,222,.07) 37%,rgba(238,232,222,0) 62%); }
 .wall-hero-shade::after { content:""; position:absolute; inset:auto 0 0; height:36%; opacity:.72; background:linear-gradient(105deg,transparent 0 24%,rgba(255,255,255,.18) 24.1% 24.35%,transparent 24.5% 100%); clip-path:polygon(0 26%,44% 0,100% 28%,100% 100%,0 100%); }
 .wall-hero::before,.wall-hero::after { content:""; position:absolute; z-index:-1; inset:0; pointer-events:none; }

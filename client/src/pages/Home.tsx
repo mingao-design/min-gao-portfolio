@@ -14,7 +14,7 @@ export default function Home() {
   const { language } = useLanguage(); const t = copy[language]; const featured = projects.filter((project) => project.featured).slice(0, 4);
   return <main id="top">
     <section className="wall-hero">
-      <div className="wall-hero-image" aria-hidden="true" /><div className="wall-hero-shade" aria-hidden="true" />
+      <div className="wall-hero-image" aria-hidden="true" style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/min-gao-wall-light-hero.png)` }} /><div className="wall-hero-shade" aria-hidden="true" />
       <div className="scene-index"><span>00</span><b>{t.kicker}</b><small>MG / PORTFOLIO</small></div>
       <div className="scene-copy"><p className="kicker"><i />{t.kicker}</p><h1>{t.heroA}<em>{t.heroB}</em></h1><p>{t.intro}</p><Link className="scene-entry" href="/projects"><span>{t.explore}</span><ArrowDownRight size={17} /></Link></div>
       <div className="scene-plaque"><i className="mg-seal" aria-hidden="true" /></div>
