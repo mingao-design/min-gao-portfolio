@@ -1,0 +1,8 @@
+/** 展览档案室设计提醒：联系页是图录封底，保持深色、编号、留白和图章系统，不使用营销型卡片。 */
+import { ArrowUpRight, Download } from "lucide-react";
+import { portfolioPdf } from "@/data/portfolio";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const copy = { fr:{ kicker:"Contact", title:"Construisons des expériences qui comptent.", text:"Pour une collaboration, une mission de design ou une conversation autour d’un projet culturel, écrivez-moi.", location:"Basée entre Paris et Shanghai", download:"Télécharger le portfolio PDF", archive:"MG / ARCHIVE", end:"END OF INDEX" }, en:{ kicker:"Contact", title:"Let’s build experiences that matter.", text:"For a collaboration, a design commission or a conversation around a cultural project, write to me.", location:"Based between Paris and Shanghai", download:"Download portfolio PDF", archive:"MG / ARCHIVE", end:"END OF INDEX" } };
+
+export default function Contact() { const { language } = useLanguage(); const t = copy[language]; return <main className="contact-page"><section className="contact-page-hero"><p className="kicker"><i />04 / {t.kicker}</p><div className="contact-title-lockup"><span className="mg-seal mg-seal--light" aria-hidden="true" /><h1>{t.title}</h1></div><div className="contact-page-box"><div className="contact-index"><span>{t.archive}</span><span>{t.end}</span></div><p>{t.text}</p><a className="email-link" href="mailto:auriane0625@gmail.com">auriane0625@gmail.com <ArrowUpRight size={19} /></a><span>{t.location}</span><a className="pdf-link" href={portfolioPdf} target="_blank" rel="noreferrer"><Download size={16} />{t.download}</a></div></section></main>; }

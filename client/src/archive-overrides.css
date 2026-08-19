@@ -1,0 +1,35 @@
+/* 展览档案室设计提醒：此覆盖层强化全站 MG 认证图章、左侧索引脊柱与案例档案板，使每条路由保持同一套策展秩序。 */
+.mg-seal { position:relative; display:inline-block; width:27px; height:27px; color:var(--red); font:700 22px/.9 var(--serif); letter-spacing:-.24em; }
+.mg-seal::before,.mg-seal::after { position:absolute; top:2px; }
+.mg-seal::before { content:"M"; left:0; }
+.mg-seal::after { content:"G"; right:-2px; top:6px; }
+.mg-seal--light { color:var(--red-light); }
+.archive-rail { width:42px; background:rgba(243,240,233,.82); border-right-color:rgba(28,27,25,.14); }
+.archive-rail::before { position:absolute; top:0; bottom:0; left:20px; width:1px; background:linear-gradient(var(--red) 0 48px,rgba(28,27,25,.16) 48px 100%); }
+.archive-rail .mg-seal { position:absolute; z-index:1; top:16px; width:24px; height:24px; font-size:20px; }
+.archive-rail span,.archive-rail em,.archive-rail b { position:absolute; z-index:1; color:var(--soft); font:500 7px var(--mono); letter-spacing:.07em; writing-mode:vertical-rl; font-style:normal; }
+.archive-rail span { top:42%; color:var(--red); }
+.archive-rail em { top:58%; }
+.archive-rail b { bottom:18px; font-weight:500; }
+.site-header { padding-left:58px; }
+.site-brand .mg-seal { flex:0 0 auto; width:22px; height:22px; font-size:18px; }
+.section-stamp { margin-bottom:3px; }
+.detail-code { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+.detail-code > span { color:var(--red); font:500 10px var(--mono); letter-spacing:.08em; }
+.detail-code .mg-seal { width:32px; height:32px; font-size:27px; }
+.detail-cover figcaption { display:flex; gap:9px; }
+.detail-cover figcaption i { width:26px; height:1px; flex:0 0 auto; margin-top:9px; background:var(--red); }
+.case-study,.original-pages,.next-project { padding-left:56px; }
+.page-evidence { gap:34px 26px; }
+.evidence-plate { margin:0; }
+.evidence-plate img { display:block; width:100%; border:1px solid rgba(28,27,25,.15); background:#fff; box-shadow:8px 9px 0 rgba(213,201,182,.66); }
+.evidence-plate figcaption { display:flex; justify-content:space-between; gap:12px; padding:9px 1px 0; color:var(--soft); font:500 8px var(--mono); letter-spacing:.075em; }
+.evidence-plate figcaption span:first-child { color:var(--red); }
+.writing-empty { padding-left:56px; }
+.empty-stamp { display:grid; align-content:start; gap:11px; }
+.empty-stamp .mg-seal { width:32px; height:32px; font-size:27px; }
+.empty-stamp small { color:var(--red); font:500 8px var(--mono); letter-spacing:.07em; }
+.about-status { align-self:end; display:grid; justify-items:start; gap:12px; padding:18px 0 0 20px; border-left:1px solid var(--line); }.about-status .mg-seal { width:34px; height:34px; font-size:28px; }.about-status span { color:var(--red); font:500 9px var(--mono); letter-spacing:.09em; }.about-status p { margin:0; color:var(--soft); font:500 10px/1.5 var(--mono); letter-spacing:.04em; }
+.contact-title-lockup { grid-column:1 / -1; align-self:end; }.contact-page h1 { max-width:830px; font-size:clamp(52px,6vw,94px); }
+@media (max-width:920px) { .archive-rail { display:none; }.site-header { padding-left:30px; }.case-study,.original-pages,.next-project,.writing-empty { padding-left:30px; } }
+@media (max-width:640px) { .site-header { padding-left:18px; }.case-study,.original-pages,.next-project,.writing-empty { padding-left:20px; }.about-status { margin-top:16px; padding:16px 0 0; border-left:0; border-top:1px solid var(--line); } }

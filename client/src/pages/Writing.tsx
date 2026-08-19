@@ -1,0 +1,8 @@
+/** 展览档案室设计提醒：文章页是未来研究笔记的索引，不虚构文章内容；使用留白和目录状态表达“待归档”。 */
+import { Link } from "wouter";
+import { ArrowUpRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+const copy = { fr:{ kicker:"Écrits & recherches", title:"Écrits", lead:"Un espace pour les notes de projet, les recherches de terrain et les réflexions sur les cultures matérielles, l’espace et l’expérience.", status:"Index en préparation", soon:"Les premiers textes seront ajoutés ici sous forme d’articles indépendants, disponibles en français et en anglais.", projects:"Voir les projets", contact:"Entrer en contact" }, en:{ kicker:"Writing & research", title:"Writing", lead:"A space for project notes, field research and reflections on material cultures, space and experience.", status:"Index in preparation", soon:"The first texts will be added here as independent articles, available in French and English.", projects:"View projects", contact:"Get in touch" } };
+
+export default function Writing() { const { language } = useLanguage(); const t = copy[language]; return <main className="page-main writing-page"><section className="page-hero writing-hero"><p className="kicker"><i />02 / {t.kicker}</p><div className="page-hero-layout"><h1>{t.title}</h1><p>{t.lead}</p></div></section><section className="writing-empty"><div className="empty-stamp"><i className="mg-seal" /><span>MG / WRITING</span><small>STATUS / PENDING</small></div><div><span>00 / 00</span><h2>{t.status}</h2><p>{t.soon}</p><div className="empty-actions"><Link className="archive-action" href="/projects">{t.projects}<ArrowUpRight size={15} /></Link><Link className="archive-action" href="/contact">{t.contact}<ArrowUpRight size={15} /></Link></div></div></section></main>; }
