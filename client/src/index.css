@@ -5,6 +5,7 @@
 @import "./cover-scene.css";
 @import "./user-wall-hero.css";
 @import "./writing-archive.css";
+@import "./writing-reader-plates.css";
 
 :root { --paper:#f3f0e9; --paper-dark:#e7dfd1; --ink:#1c1b19; --soft:#716c64; --line:rgba(28,27,25,.18); --red:#a53b2b; --red-light:#d88a79; --serif:"DM Serif Display",Georgia,serif; --sans:"Manrope",Arial,sans-serif; --mono:"DM Mono",monospace; --ease:cubic-bezier(.23,1,.32,1); }
 * { box-sizing:border-box; } html { scroll-behavior:smooth; background:var(--paper); } body { margin:0; color:var(--ink); background:var(--paper); font-family:var(--sans); } button,a { color:inherit; font:inherit; } button { cursor:pointer; } a { text-decoration:none; }
