@@ -13,7 +13,7 @@ export const originalPages = Array.from({ length: 27 }, (_, index) => asset(`pag
 export const portfolioPdf = asset("documents/min-gao-portfolio-french.pdf");
 
 export type Project = {
-  slug: string; id: string; category: Category; image: string; pages: number[]; featured?: boolean;
+  slug: string; id: string; category: Category; image: string; pages: number[]; featured?: boolean; evidence?: { src: string; label: string }[]; posterProject?: boolean;
   fr: { title: string; subtitle: string; summary: string; role: string; location: string; year: string; context: string; approach: string; outcome: string };
   en: { title: string; subtitle: string; summary: string; role: string; location: string; year: string; context: string; approach: string; outcome: string };
 };
@@ -22,6 +22,13 @@ const residualLandscapeProject: Project = {
   slug:"paysage-residuel", id:"13", category:"Critical", image:originalPages[11], pages:[12,13],
   fr:{ title:"Le paysage résiduel", subtitle:"Rendre perceptible la pollution invisible", summary:"Une installation interactive qui transforme un geste festif en expérience critique de la pollution atmosphérique et de ses effets invisibles.", role:"Conception interactive · visualisation de données · médiation scientifique", location:"Paris, France", year:"2025", context:"La pollution atmosphérique, peu visible, entraîne des conséquences profondes pour les écosystèmes et la santé humaine. Comment rendre ses données perceptibles sans réduire leur complexité ?", approach:"Le dispositif traduit des particules fines PM2.5 en paysage volcanique réactif. La vision par ordinateur interprète la tension et le déplacement de la main pour faire évoluer l’état du paysage.", outcome:"Un projet Art & Science qui associe simulation de particules, données environnementales et interface gestuelle afin de faire de la pollution un phénomène sensible, discutable et visible." },
   en:{ title:"Residual Landscape", subtitle:"Making invisible pollution perceptible", summary:"An interactive installation that turns a festive gesture into a critical experience of atmospheric pollution and its invisible effects.", role:"Interactive design · data visualisation · scientific mediation", location:"Paris, France", year:"2025", context:"Atmospheric pollution is difficult to perceive yet deeply affects ecosystems and human health. How can scientific data be made perceptible without flattening its complexity?", approach:"The device translates PM2.5 particles into a reactive volcanic landscape. Computer vision interprets hand tension and movement to evolve the landscape’s state.", outcome:"An Art & Science project combining particle simulation, environmental data and gestural interaction to make pollution a sensitive, visible and discussable phenomenon." }
+};
+
+const synesthesiePostersProject: Project = {
+  slug:"synesthesie-recreation-sensorielle", id:"09", category:"Graphic", image:asset("posters/affiche-01.jpg"), pages:[], posterProject:true,
+  evidence:[{src:asset("posters/affiche-01.jpg"),label:"Affiche 01 · vortex monochrome"},{src:asset("posters/affiche-02.jpg"),label:"Affiche 02 · fragmentation chromatique"},{src:asset("posters/affiche-03.jpg"),label:"Affiche 03 · constellation de reflets"}],
+  fr:{title:"Synesthésie — Re-création sensorielle",subtitle:"Série d’affiches pour la Fondation Louis Vuitton",summary:"Une série de trois affiches qui compose une expérience visuelle de la synesthésie, entre mouvement, vertige optique et mémoire sensible.",role:"Direction artistique · conception graphique · série d’affiches",location:"Fondation Louis Vuitton, Paris",year:"2025",context:"Comment annoncer une exposition sensorielle sans réduire l’expérience à une image illustrative ou à un code graphique unique ?",approach:"La série construit trois champs perceptifs distincts : un vortex monochrome, une fragmentation en mosaïque et une constellation de reflets. Le nom de l’institution et les informations d’exposition sont traités comme une structure calme qui encadre l’intensité visuelle.",outcome:"Une identité d’affichage conçue comme une séquence : chaque poster est autonome, tandis que l’ensemble traduit la re-création sensorielle par le rythme, la matière et la persistance rétinienne."},
+  en:{title:"Synesthesia — Sensory re-creation",subtitle:"Poster series for the Fondation Louis Vuitton",summary:"A series of three posters composing a visual experience of synesthesia through movement, optical vertigo and sensory memory.",role:"Art direction · graphic design · poster series",location:"Fondation Louis Vuitton, Paris",year:"2025",context:"How can a sensory exhibition be announced without reducing the experience to an illustrative image or a single graphic code?",approach:"The series constructs three distinct perceptual fields: a monochrome vortex, a mosaic-like fragmentation and a constellation of reflections. The institution’s name and exhibition information work as a calm structure framing visual intensity.",outcome:"A poster identity conceived as a sequence: each work stands on its own, while the collection translates sensory re-creation through rhythm, materiality and retinal persistence."}
 };
 
 export const projects: Project[] = [
@@ -45,3 +52,6 @@ const robinsonProject = projects.find((project) => project.slug === "robinson-al
 if (robinsonProject) robinsonProject.pages = [11];
 const robinsonIndex = projects.findIndex((project) => project.slug === "robinson-algorithm");
 projects.splice(robinsonIndex + 1, 0, residualLandscapeProject);
+const posterInsertionIndex = projects.findIndex((project) => project.slug === "cheng-yi");
+projects.splice(posterInsertionIndex, 0, synesthesiePostersProject);
+projects.slice(posterInsertionIndex).forEach((project, index) => { project.id = String(9 + index).padStart(2, "0"); });
