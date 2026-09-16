@@ -7,3 +7,6 @@
 .live-project-frame iframe { display:block; width:100%; height:min(72vw,760px); min-height:560px; border:1px solid rgba(28,27,25,.2); background:#fff; }
 @media (max-width:920px) { .live-project { padding-inline:30px; }.live-project-frame iframe { height:70vw; min-height:520px; } }
 @media (max-width:640px) { .live-project { padding:70px 20px 80px; }.live-project-frame { margin-top:25px; padding:8px; }.live-project-frame iframe { height:125vw; min-height:580px; } }
+
+/* Co-Mémoration opens directly onto the embedded live experience; the duplicate first plate is omitted. */
+.project-detail--live .detail-cover { display:none; }
