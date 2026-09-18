@@ -55,4 +55,4 @@ const robinsonIndex = projects.findIndex((project) => project.slug === "robinson
 projects.splice(robinsonIndex + 1, 0, residualLandscapeProject);
 const posterInsertionIndex = projects.findIndex((project) => project.slug === "cheng-yi");
 projects.splice(posterInsertionIndex, 0, synesthesiePostersProject);
-projects.slice(posterInsertionIndex).forEach((project, index) => { project.id = String(9 + index).padStart(2, "0"); });
+projects.forEach((project, index) => { project.id = String(index + 1).padStart(2, "0"); });
