@@ -5,8 +5,8 @@ import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const copy = {
-  fr: { projects: "Projets", writing: "Écrits", about: "À propos", contact: "Contact", menu: "Menu", descriptor: "DESIGN" },
-  en: { projects: "Projects", writing: "Writing", about: "About", contact: "Contact", menu: "Menu", descriptor: "DESIGN" },
+  fr: { projects: "Projets", writing: "Écrits", about: "À propos", contact: "Contact", annex: "Annexe", menu: "Menu", descriptor: "DESIGN" },
+  en: { projects: "Projects", writing: "Writing", about: "About", contact: "Contact", annex: "Annex", menu: "Menu", descriptor: "DESIGN" },
 };
 
 export function SiteShell({ children }: { children: React.ReactNode }) {
@@ -14,8 +14,8 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   const [location] = useLocation();
   const [open, setOpen] = useState(false);
   const t = copy[language];
-  const archiveStatus = location.startsWith("/projects/") ? "DOSSIER" : location === "/projects" ? "PROJECT INDEX" : location === "/writing" ? "WRITING" : location === "/about" ? "AUTHOR INDEX" : location === "/contact" ? "CONTACT" : "PORTFOLIO";
-  const links = [["/projects", t.projects], ["/writing", t.writing], ["/about", t.about], ["/contact", t.contact]];
+  const archiveStatus = location.startsWith("/projects/") ? "DOSSIER" : location === "/projects" ? "PROJECT INDEX" : location === "/writing" ? "WRITING" : location === "/about" ? "AUTHOR INDEX" : location === "/contact" ? "CONTACT" : location === "/drawing" ? "DRAWING ARCHIVE" : location === "/annexe" ? "ANNEX / TUTORAT" : "PORTFOLIO";
+  const links = [["/projects", t.projects], ["/annexe", t.annex], ["/writing", t.writing], ["/about", t.about], ["/contact", t.contact]];
   return <div className="site-shell">
     <div className="site-grain" aria-hidden="true" />
     <aside className="archive-rail" aria-hidden="true"><i className="mg-seal" /><span>{archiveStatus}</span><em>MIN GAO</em><b>2024—2026</b></aside>
