@@ -63,3 +63,17 @@
 @media (max-width:640px) { .annex-hero { padding:35px 20px 65px; }.annex-hero-grid { display:block; margin-top:76px; }.annex-hero h1 { font-size:72px; }.annex-method,.annex-section { padding:65px 20px 75px; }.annex-section .drawing-section-head { display:block; }.annex-section .drawing-section-head > span { display:block; margin-top:22px; }.annex-grid,.annex-grid--observation,.annex-grid--industrial { grid-template-columns:1fr; gap:42px; margin-top:48px; }.annex-grid--observation .annex-plate:first-child { grid-row:auto; }.annex-grid--observation .annex-plate:nth-child(2),.annex-grid--observation .annex-plate:nth-child(3),.annex-grid--industrial .annex-plate:nth-child(2) { margin:0; }.annex-single { margin-top:48px; } }
 
 .formation-collaboration { display:block; margin-top:8px; color:var(--red); font:500 8px/1.4 var(--mono); letter-spacing:.045em; text-transform:uppercase; }
+/* Readability pass: preserve hierarchy while preventing archival metadata from becoming too small. */
+.kicker { font-size:10px !important; }
+.site-header, .site-header a { font-size:10px; }
+.project-facts, .project-card .project-info > small, .project-collaboration { font-size:10px !important; }
+.project-collaboration { line-height:1.45; }
+.about-file-line, .about-status dt, .about-status dd, .about-school-records > article > span, .about-links small { font-size:9px !important; }
+.formation-collaboration { margin-top:9px; color:var(--red); font:600 10.5px/1.45 var(--mono) !important; letter-spacing:.025em; text-transform:uppercase; }
+.reader-classification, .reader-facts span, .document-plate-meta, .document-frame figcaption { font-size:9px !important; }
+.research-register-labels, .research-row-type, .research-row-meta, .research-row-action { font-size:9px !important; }
+.archive-action, .drawing-close a, .annex-hero .back-link { font-size:10px !important; }
+@media (max-width:640px) {
+  .site-header, .site-header a, .kicker, .project-facts, .project-card .project-info > small, .formation-collaboration, .reader-classification, .reader-facts span, .document-plate-meta, .research-register-labels, .research-row-type, .research-row-meta, .research-row-action { font-size:10px !important; }
+  .formation-collaboration { font-size:10.5px !important; }
+}
