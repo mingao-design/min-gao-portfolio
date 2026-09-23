@@ -77,3 +77,32 @@
   .site-header, .site-header a, .kicker, .project-facts, .project-card .project-info > small, .formation-collaboration, .reader-classification, .reader-facts span, .document-plate-meta, .research-register-labels, .research-row-type, .research-row-meta, .research-row-action { font-size:10px !important; }
   .formation-collaboration { font-size:10.5px !important; }
 }
+/* Header readability pass: a calm, iPhone-like 14px navigation scale. */
+.site-header { height:76px; padding-left:52px; }
+.site-brand { gap:10px; font-size:14px !important; letter-spacing:.075em; }
+.site-brand .mg-seal { width:23px; height:23px; }
+.site-brand small { font-size:11px !important; letter-spacing:.08em; }
+.desktop-nav { gap:29px; }
+.desktop-nav a { padding:8px 0; font-size:14px !important; letter-spacing:.065em; }
+.language-switch { gap:6px; font-size:13px !important; letter-spacing:.07em; }
+.mobile-menu-button { padding:5px; }
+.mobile-menu-button svg { width:21px; height:21px; }
+.mobile-nav { top:76px; gap:17px; padding:26px 30px 31px; }
+.mobile-nav a { font-size:31px; }
+.archive-rail { top:76px; }
+.archive-rail span,.archive-rail b,.archive-rail em { font-size:8px; }
+@media (max-width:920px) {
+  .site-header { padding-left:31px; }
+  .desktop-nav { gap:20px; }
+  .desktop-nav a { font-size:13px !important; }
+}
+@media (max-width:640px) {
+  .site-header { height:64px; padding:0 18px; }
+  .site-brand { font-size:13px !important; }
+  .site-brand .mg-seal { width:21px; height:21px; }
+  .site-brand small { font-size:10px !important; }
+  .language-switch { font-size:12px !important; }
+  .mobile-nav { top:64px; gap:16px; padding:25px 22px 29px; }
+  .mobile-nav a { font-size:30px; }
+  .archive-rail { top:64px; }
+}
