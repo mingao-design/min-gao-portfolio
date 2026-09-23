@@ -106,3 +106,19 @@
   .mobile-nav a { font-size:30px; }
   .archive-rail { top:64px; }
 }
+/* About metadata readability: make the author file legible at a glance. */
+.about-file-line { font-size:11px !important; line-height:1.4; letter-spacing:.06em; }
+.about-status { gap:16px; }
+.about-status > span { font:600 11px/1.4 var(--mono) !important; letter-spacing:.075em; }
+.about-status dl { gap:16px; margin-top:21px; padding-top:14px; }
+.about-status dl div { grid-template-columns:78px minmax(0,1fr); gap:13px; }
+.about-status dt { font-size:10px !important; line-height:1.5; letter-spacing:.06em; }
+.about-status dd { color:var(--ink) !important; font:500 12px/1.55 var(--sans) !important; letter-spacing:0; }
+@media (max-width:640px) {
+  .about-file-line { font-size:10px !important; }
+  .about-status > span { font-size:10px !important; }
+  .about-status dl { gap:14px; }
+  .about-status dl div { grid-template-columns:70px minmax(0,1fr); gap:10px; }
+  .about-status dt { font-size:9px !important; }
+  .about-status dd { font-size:12px !important; }
+}
