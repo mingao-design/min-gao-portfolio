@@ -18,7 +18,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   const links = [["/projects", t.projects], ["/annexe", t.annex], ["/writing", t.writing], ["/about", t.about], ["/contact", t.contact]];
   return <div className="site-shell">
     <div className="site-grain" aria-hidden="true" />
-    <aside className="archive-rail" aria-hidden="true"><i className="mg-seal" /><span>{archiveStatus}</span><em>MIN GAO</em><b>2024—2026</b></aside>
+    <aside className="archive-rail" aria-hidden="true"><span>{archiveStatus}</span><em>MIN GAO</em><b>2024—2026</b></aside>
     <header className="site-header">
       <Link href="/" className="site-brand" onClick={() => setOpen(false)}><i className="mg-seal" aria-hidden="true" /><span>MIN GAO</span><small>{t.descriptor}</small></Link>
       <nav className="desktop-nav" aria-label="Primary navigation">{links.map(([href, label]) => <Link href={href} className={location === href ? "active" : ""} key={href}>{label}</Link>)}</nav>
