@@ -14,7 +14,6 @@ import Writing from "./pages/Writing";
 import ResearchDetail from "./pages/ResearchDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Annex from "./pages/Annex";
 
 
 function Routes() {
@@ -22,7 +21,6 @@ function Routes() {
     <SiteShell><Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/projects"} component={Projects} />
-      <Route path={"/annexe"} component={Annex} />
       <Route path={"/projects/:slug"} component={ProjectDetail} />
       <Route path={"/writing/:slug"} component={ResearchDetail} />
       <Route path={"/writing"} component={Writing} />
